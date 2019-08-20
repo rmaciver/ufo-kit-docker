@@ -70,7 +70,7 @@ $ docker run \
 	-it ufo-kit:local
 ```
 
-Test pm a grayscale version of lena:
+Test om a grayscale version of lena:
 ``` shell
 $ ufo-launch read path=lena_gs.tif ! detect-edge filter=sobel ! write filename=sobel.tif
 ```
