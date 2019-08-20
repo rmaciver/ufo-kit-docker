@@ -53,10 +53,10 @@ $ xhost -local:root
 2. Set file permissions. \
 The directory that will be accessible in the container can permits two-way file sharing. A group 1024 was added to the container during the build, so it is necessary that the host is also a member of this group:
 ``` shell
-dir=/media/user/test
-chown :1024 $dir
-chmod 775 $dir
-chmod g+s $dir
+$ dir=/media/user/test
+$ chown :1024 $dir
+$ chmod 775 $dir
+$ chmod g+s $dir
 ```
 
 The full command to launch the container with x-server access and data directory mounted:
@@ -73,9 +73,11 @@ $ docker run \
 Consider putting the above command in an executable bash script to launch the container:
 
 ``` shell
-echo 'docker run --gpus all -v /media/user/test:/data -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -it ufo-kit:local' >> ufo-kit-base_launch.sh
-sudo ufo-kit-base_launch.sh
-./ufo-kit-base_launch.sh
+$ echo 'docker run --gpus all -v /media/user/test:/data \
+	-v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY \
+	-it ufo-kit:local' >> ufo-kit-base_launch.sh
+$ sudo chmod +x ufo-kit-base_launch.sh
+$ ./ufo-kit-base_launch.sh
 ```
 
 Inside the container, test a ufo-launch command on a grayscale version of lena:
