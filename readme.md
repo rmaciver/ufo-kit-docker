@@ -70,7 +70,15 @@ $ docker run \
 	-it ufo-kit:local
 ```
 
-Test om a grayscale version of lena:
+Consider putting the above command in an executable bash script to launch the container:
+
+``` shell
+echo 'docker run --gpus all -v /media/user/test:/data -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -it ufo-kit:local' >> ufo-kit-base_launch.sh
+sudo ufo-kit-base_launch.sh
+./ufo-kit-base_launch.sh
+```
+
+Inside the container, test a ufo-launch command on a grayscale version of lena:
 ``` shell
 $ ufo-launch read path=lena_gs.tif ! detect-edge filter=sobel ! write filename=sobel.tif
 ```
