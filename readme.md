@@ -1,5 +1,8 @@
-# ufo-kit-docker-base
-A Dockerfile for x86_64 GNU/Linux that includes components of the UFO framework for tomographic data processing.   
+# Dockerfiles for UFO framework
+Dockerfiles for x86_64 GNU/Linux that includes components of the UFO framework for tomographic data processing.   
+
+The following Dockerfiles are included: 
+* ufo-kit-base/Dockerfile
 
 ## Features
 * Installation of UFO-core and UFO-filters Debian packages
