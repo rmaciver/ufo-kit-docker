@@ -82,5 +82,6 @@ $ ./ufo-kit-base_launch.sh
 
 Inside the container, test a ufo-launch command on a grayscale version of lena:
 ``` shell
-$ ufo-launch read path=lena_gs.tif ! detect-edge filter=sobel ! write filename=sobel.tif
+$ ufo-launch read path=lena_gs.tif ! blur size=20 sigma=5 ! write filename=blur.tif
+$ ufo-launch read path=lena_gs.tif ! calculate expression="'v+1000'" ! write filename=plus1000.tif
 ```
