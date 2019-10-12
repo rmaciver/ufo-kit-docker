@@ -1,5 +1,8 @@
 # Dockerfiles for UFO framework
-Dockerfiles for x86_64 GNU/Linux that include components of the UFO framework for tomographic data processing. The following Dockerfile is included: ufo-kit-base/Dockerfile
+Dockerfiles for x86_64 GNU/Linux that include components of the UFO framework for tomographic data processing. The following Dockerfiles are included: 
+
+* ufo-kit-base/Dockerfile. Install the .deb packages with apt-get in Ubuntu
+* ufo-kit-dev/Dockerfile. Install ufo-core and ufo-filters from source. 
 
 ## Features
 * Installation of UFO-core and UFO-filters Debian packages
